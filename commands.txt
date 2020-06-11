@@ -1,0 +1,940 @@
+    1  df /h
+    2  df  -h
+    3  python3 -V
+    4  sudo raspi-config
+    5  sudo apt-get install xscreensaver
+    6  ifconfig
+    7  sudo apt-get update && sudo apt-get upgrade
+    8  sudo apt-get install build-essential cmake unzip pkg-config
+    9  sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+   10  $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+   11  sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+   12  sudo apt-get install libxvidcore-dev libx264-dev
+   13  sudo apt-get install libgtk-3-dev
+   14  sudo apt-get install libcanberra-gtk*
+   15  sudo apt-get install libatlas-base-dev gfortran
+   16  sudo apt-get install python3-dev
+   17  cd ~
+   18  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.0.zip
+   19  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.0.zip
+   20  unzip opencv.zip
+   21  unzip opencv_contrib.zip
+   22  mv opencv-4.0.0 opencv
+   23  mv opencv_contrib-4.0.0 opencv_contrib
+   24  wget https://bootstrap.pypa.io/get-pip.py
+   25  sudo python3 get-pip.py
+   26  sudo pip install virtualenv virtualenvwrapper
+   27  sudo rm -rf ~/get-pip.py ~/.cache/pip
+   28  sudo vi ~/.profile 
+   29  clear
+   30  sudo vi ~/.profile 
+   31  source ~/.profile 
+   32  mkvirtualenv dl -p python3
+   33  workon dl
+   34  pip install numpy
+   35  cd ~/opencv
+   36  mkdir build
+   37  cd build/
+   38  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules     -D ENABLE_NEON=ON     -D ENABLE_VFPV3=ON     -D BUILD_TESTS=OFF     -D OPENCV_ENABLE_NONFREE=ON     -D INSTALL_PYTHON_EXAMPLES=OFF     -D BUILD_EXAMPLES=OFF ..
+   39  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules     -D ENABLE_NEON=ON     -D ENABLE_VFPV3=ON     -D BUILD_TESTS=OFF     -D OPENCV_ENABLE_NONFREE=ON     -D INSTALL_PYTHON_EXAMPLES=OFF \
+   40  sudo nano /etc/dphys-swapfile
+   41  source ~/.profile 
+   42  workon dl
+   43  cd opencv/build/
+   44  sudo vi /etc/dphys-swapfile
+   45  sudo /etc/init.d/dphys-swapfile stop
+   46  sudo /etc/init.d/dphys-swapfile start
+   47  make -j2
+   48  exit
+   49  source /home/pi/.profile 
+   50  workon dl
+   51  cd opencv/build/
+   52  sudo make install
+   53  sudo ldconfig
+   54  cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+   55  cd ~/.virtualenvs/dl/lib/python3.5/site-packages/
+   56  ln -s /usr/local/python/cv2/python-3.5/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+   57  cd /home/pi/
+   58  python
+   59  cd DeepLearning/Identification/
+   60  python train_model.py 
+   61  pip install keras
+   62  python train_model.py 
+   63  pip install tensorflow
+   64  python train_model.py 
+   65  pip install sklearn
+   66  python train_model.py 
+   67  sudo python train_model.py 
+   68  c ..
+   69  sudo chmod 777 *
+   70  ls -lrt
+   71  cd ..
+   72  sudo chmod 777 Identification/
+   73  cd ..
+   74  sudo chmod 777 DeepLearning/
+   75  cd -
+   76  cd Identification/
+   77  sudo python train_model.py 
+   78  python train_model.py 
+   79  idle train_model.py 
+   80  python train_model.py 
+   81  sudo raspi-config
+   82  df -h
+   83  idle
+   84  raspistill -o test.png
+   85  source /home/pi/.profile
+   86  workon dl
+   87  cd DeepLearning/Identification/
+   88  pip install dlib
+   89  python test_model.py
+   90  pip install imutils
+   91  python test_model.py
+   92  pip install cython
+   93  sudo apt-get install libhdf5-dev
+   94  pip install h5py
+   95  python test_model.py
+   96  pip uninstall tensorflow
+   97  pip install -Iv tensorflow==1.5
+   98  python test_model.py
+   99  cd /home/pi/Downloads/pi-face-recognition
+  100  vi encodings.pickle 
+  101  cd DeepLearning/Identification/
+  102  idle encode_faces.py 
+  103  cd /home/pi/DeepLearning/Identification
+  104  idle face_recognition.py 
+  105  cd /home/pi/Downloads/pi-face-recognition
+  106  source /home/pi/.profile
+  107  workon dl
+  108  pip install face_recognition
+  109  python encode_faces.py --dataset dataset --encodings encodings.pickle --detection-method hog
+  110  python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle
+  111  raspistill -o test.png
+  112  sudo modprobe bcm2835-v4l2
+  113  python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle
+  114  cd /home/pi/DeepLearning/Identification/
+  115  idle encode_faces.py 
+  116  python encode_faces.py --dataset knownfaces --encodings encodings.pickle --detection-method hog
+  117  python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle
+  118  cd ..
+  119  cd Gowri/
+  120  python main.py
+  121  cd ..
+  122  python main.py
+  123  python
+  124  cd Identification/
+  125  python pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle
+  126  python
+  127  cd ..
+  128  python
+  129  idle /home/pi/DeepLearning/Identification/face_recognition.py 
+  130  source /home/pi/.profile 
+  131  workon dl
+  132  cd DeepLearning/Identification/
+  133  python
+  134  cd ..
+  135  python
+  136  cd Identification/
+  137  python face_recognition.py 
+  138  sudo modprobe bcm2835-v4l2
+  139  python face_recognition.py 
+  140  python pi_face_recognition.py 
+  141  sudo raspi-config
+  142  lsub
+  143  lsusb
+  144  arecord -l
+  145  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  146  ls -lrt
+  147  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  148  pwd
+  149  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  150  arecord -l
+  151  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  152  arecord -l
+  153  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  154  alsamixer
+  155  cd DeepLearning/
+  156  source /home/pi/.profile 
+  157  workon dl
+  158  cd SpeechRecognizer/
+  159  pip install swig
+  160  sudo apt-get install swig
+  161  pip install swig
+  162  pip install pocketsphinx
+  163  sudo apt-get istall pulse
+  164  sudo apt-get install pulse
+  165  sudo apt-get install libpulse-dev
+  166  pip install pocketsphinx
+  167  sudo apt-get install libalsa-dev
+  168  sudo apt-get install libalsa
+  169  sudo apt-get install alsa
+  170  sudo apt-get install libasound2-dev
+  171  pip install pocketsphinx
+  172  pip install SpeechRecognition 
+  173  idle
+  174  python speakandlisten.py 
+  175  pip install pyaudio
+  176  sudo apt-get install portaudio19-dev
+  177  pip install pyaudio
+  178  python speakandlisten.py 
+  179  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  180  python speakandlisten.py 
+  181  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  182  python speakandlisten.py 
+  183  idle
+  184  python demo.py
+  185  pip install snowboydecoder
+  186  pip install snowboydecoder_arecord
+  187  pip install snowboy
+  188  cd /tmp/pip
+  189  pip install swig
+  190  pip install snowboy
+  191  python speakandlisten.py 
+  192  python demo.py 
+  193  vi demo.py
+  194  sudo vi demo.py
+  195  python demo.py 
+  196  sudo vi demo.py
+  197  python demo.py 
+  198  sudo vi demo.py
+  199  aplay -l
+  200  pyaudio -v
+  201  pip pyaudio
+  202  pip install pyaudio
+  203  python
+  204  python demo.py 
+  205  python speakandlisten.py 
+  206  aplay -l
+  207  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  208  python speakandlisten.py 
+  209  vi /home/pi/.asoundrc 
+  210  sudo vi /home/pi/.asoundrc 
+  211  python speakandlisten.py 
+  212  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  213  sudo vi /home/pi/.asoundrc 
+  214  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  215  sudo vi /home/pi/.asoundrc 
+  216  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  217  sudo vi /home/pi/.asoundrc 
+  218  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  219  arecord -D plughw:0,0 -d 3 test.wav && aplay test.wav
+  220  arecord --device=plughw:0,0 --format S16_LE --rate 44100 -c1 test.wav
+  221  sudo vi /home/pi/.asoundrc 
+  222  arecord -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  223  python speakandlisten.py 
+  224  sudo apt-get install flac
+  225  python speakandlisten.py 
+  226  clear
+  227  sudo vi /home/pi/.asoundrc 
+  228  cd /home/pi/
+  229  sudo apt-get install python-pyaudio python3-pyaudio sox
+  230  wget http://downloads.sourceforge.net/swig/swig-3.0.10.tar.gz
+  231  ls -lrt
+  232  ls -l /usr/bin/swig*
+  233  sudo apt-get install libatlas-base-dev
+  234  sudo apt-get install portaudio19-dev
+  235  git clone https://github.com/Kitt-AI/snowboy.git
+  236  cd snowboy/swig/Python3
+  237  make
+  238  cd ../../examples/Python3
+  239  python demo.py resources/snowboy.umdl
+  240  idle demo.py
+  241  idle snowboydecoder.py 
+  242  python demo.py resources/snowboy.umdl
+  243  python demo.py resources/models/snowboy.umdl
+  244  cd /home/pi/DeepLearning/SpeechRecognizer/
+  245  python speakandlisten.py 
+  246  cd -
+  247  python demo.py resources/models/snowboy.umdl
+  248  arecord -l
+  249  python -m sounddevice
+  250  pip install sounddevice
+  251  python -m sounddevice
+  252  python demo.py resources/models/snowboy.umdl
+  253  python demo3.py resources/snowboy.wav resources/models/snowboy.umdl
+  254  python demo3.py resources/ding.wav resources/models/snowboy.umdl
+  255  python demo4.py resources/models/snowboy.umdl
+  256  record -f dat -r 60000 -D hw:0,0 -d 5 test.wav
+  257  arecord -f dat -r 60000 -D hw:0,0 -d 5 test.wav
+  258  arecord -l
+  259  arecord -r 60000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  260  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  261  python demo4.py resources/models/snowboy.umdl
+  262  cd -
+  263  python speakandlisten.py 
+  264  cd -
+  265  python demo4.py resources/models/snowboy.umdl
+  266  cd resources
+  267  ls -lrt
+  268  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  269  play snowboy.wav 
+  270  play test.wav 
+  271  python demo3.py resources/test.wav resources/models/snowboy.umdl
+  272  cd ..
+  273  python demo3.py resources/test.wav resources/models/snowboy.umdl
+  274  vi demo2.py 
+  275  sudo vi demo_arecord.py
+  276  python demo_arecord.py 
+  277  sudo vi demo_arecord.py
+  278  python demo_arecord.py 
+  279  python demo_arecord.py resources/models/snowboy.umdl 
+  280  sudo vi demo_arecord.py
+  281  python demo_arecord.py resources/models/snowboy.umdl 
+  282  ls -lrt
+  283  sudo vi snowboydecoder_arecord.py 
+  284  sudo vi demo_arecord.py
+  285  python demo_arecord.py resources/models/snowboy.umdl 
+  286  pwd
+  287  python demo4.py resources/models/snowboy.umdl
+  288  python demo_arecord.py 
+  289  python demo_arecord.py resources/models/snowboy.umdl
+  290  python demo4.py resources/test.wav resources/models/snowboy.umdl
+  291  python demo_arecord.py resources/models/snowboy.umdl
+  292  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  293  arecord -q -r 16000 -f S16_LE D plughw:1,0 -d 3 test.wav && aplay test.wav
+  294  sudo vi /home/pi/.asoundrc 
+  295  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  296  sudo vi /home/pi/.asoundrc 
+  297  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  298  python demo_arecord.py resources/models/snowboy.umdl
+  299  python demo4.py resources/test.wav resources/models/snowboy.umdl
+  300  python demo4.py  resources/models/snowboy.umdl
+  301  cd -
+  302  cd ..
+  303  cd /home/pi/DeepLearning/SpeechRecognizer/
+  304  python speakandlisten.py 
+  305  cd -
+  306  python demo4.py resources/models/snowboy.umdl
+  307  python demo.py resources/models/snowboy.umdl
+  308  python demo4.py resources/models/snowboy.umdl
+  309  clear
+  310  python demo4.py resources/models/snowboy.umdl
+  311  source /home/pi/.profile 
+  312  workon dl
+  313  cd snowboy/swig/Python3/
+  314  ls
+  315  ls -lrt
+  316  cd ..
+  317  cd examples/Python3/
+  318  python demo4.py resources/models/snowboy.umdl
+  319  source /home/pi/.profile 
+  320  workon dl
+  321  cd /home/pi/snowboy/examples/Python3/
+  322  python demo4.py resources/models/snowboy.umdl
+  323  source /home/pi/.profile 
+  324  workon dl
+  325  python demo4.py resources/models/snowboy.umdl
+  326  cd /home/pi/snowboy/examples/Python3/
+  327  python demo4.py resources/models/snowboy.umdl
+  328  source /home/pi/.profile 
+  329  workon dl
+  330  python demo4.py resources/models/snowboy.umdl
+  331  cd /home/pi/snowboy/examples/Python3/
+  332  python demo4.py resources/models/snowboy.umdl
+  333  source /home/pi/.profile
+  334  workon dl
+  335  cd /home/pi/snowboy/examples/Python3/
+  336  python demo4.py resources/models/snowboy.umdl
+  337  rec this.wav
+  338  play this.wav
+  339  sudo vi /home/pi/.asoundrc 
+  340  play this.wav
+  341  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  342  sudo vi /home/pi/.asoundrc 
+  343  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  344  sudo vi /home/pi/.asoundrc 
+  345  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  346  rec this.wav
+  347  sudo vi /home/pi/.asoundrc 
+  348  sudo rec this.wav
+  349  arecord -r 16000 -D plughw:1,0 -d 3 test.wav && aplay test.wav
+  350  source /home/pi/.profile
+  351  workon dl
+  352  cd /home/pi/snowboy/examples/Python3/
+  353  python demo4.py resources/models/snowboy.umdl
+  354  sudo vi /home/pi/.asoundrc 
+  355  python demo4.py resources/models/snowboy.umdl
+  356  aplay -l
+  357  arecord -l
+  358  vi ~/.asoundrc
+  359  rec temp.wav
+  360  arecord -l
+  361  sudo apt-get install rec
+  362  rec
+  363  sudo apt-get install SoX
+  364  sudo apt-get install sox
+  365  rec
+  366  rec temp.wav
+  367  play temp.wav
+  368  swig -version
+  369  vi /etc/asound.conf
+  370  cd DeepLearning/SpeechRecognizer/
+  371  idle speakandlisten.py 
+  372  cd /home/pi/snowboy/examples/Python3
+  373  idle demo4.py 
+  374  sudo idle snowboydecoder.py 
+  375  cd /home/pi/DeepLearning/SpeechRecognizer/
+  376  python speakandlisten.py 
+  377  cd -
+  378  idle demo.py 
+  379  sudo idle demo.py 
+  380  source /home/pi/.profile 
+  381  workon dl
+  382  cd /home/pi/snowboy/examples/Python3/
+  383  python demo4.py resources/models/Gauri.pmdl 
+  384  source /home/pi/.profile 
+  385  workon dl
+  386  cd /home/pi/snowboy/examples/Python3/
+  387  python demo4.py resources/models/Gauri.pmdl 
+  388  source /home/pi/.profile 
+  389  workon dl
+  390  python demo4.py resources/models/Gauri.pmdl 
+  391  cd /home/pi/snowboy/examples/Python3/
+  392  python demo4.py resources/models/Gauri.pmdl 
+  393  clear
+  394  cd /home/pi/DeepLearning/SpeechRecognizer
+  395  python demo4.py resources/models/Gauri.pmdl 
+  396  pip install --upgrade watson-developer-cloud
+  397  df -h
+  398  source /home/pi/.profile 
+  399  workon dl
+  400  echo $IBM_CREDENTIALS_FILE
+  401  python watsontts.py 
+  402  curl -X POST -u "apikey:{ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh}" --header "Content-Type: application/json" --header "Accept: audio/wav" --data '{"text": "hello world"}' --output hello_world.wav "{https://stream-fra.watsonplatform.net/text-to-speech/api}/v1/synthesize"
+  403  ls -lrt
+  404  python watsontts.py 
+  405  python demo4.py resources/models/Gauri.pmdl 
+  406  python n watsontts.py 
+  407  python watsontts.py 
+  408  workon dl
+  409  source /home/pi/.profile 
+  410  wokon dl
+  411  source /home/pi/.profile 
+  412  wokon dl
+  413  workon dl
+  414  cd /home/pi/DeepLearning/SpeechRecognizer/
+  415  python watsontts.py 
+  416  cd /home/pi/DeepLearning/
+  417  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/wav" --data '{"text": "hello world"}' --output hello_world.wav "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  418  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/mp3" --data '{"text": "hello world"}' --output hello_world.wav "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  419  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/mp3" --data '{"text": "hello world"}' --output hello_world.mp3 "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  420  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/mp3" --data '{"text": "hello world this is ibm watson text to speech service test"}' --output hello_world.mp3 "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  421  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/mp3" --data '{"text": "hello world this is ibm watson text to speech service test, also contains many more features"}' --output hello_world.mp3 "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  422  sudo vi /home/pi/.profile 
+  423  sudo vi ~/.asoundrc
+  424  sudo cp  ~/.asoundrc ~/.asoundrcASR
+  425  sudo vi ~/.asoundrc
+  426  sudo cp  ~/.asoundrc ~/.asoundrcSound
+  427  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  428  sudo vi ~/.asoundrc
+  429  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  430  sudo vi ~/.asoundrc
+  431  sudo cp  ~/.asoundrcSound ~/.asoundrc
+  432  sudo vi ~/.asoundrc
+  433  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  434  sudo cp  ~/.asoundrcSound ~/.asoundrc
+  435  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  436  sudo vi ~/.asoundrc
+  437  sudo cp  ~/.asoundrcSound ~/.asoundrc
+  438  source /home/pi/.profile 
+  439  workon dl
+  440  cd /home/pi/DeepLearning/SpeechRecognizer/
+  441  python watsontts.py 
+  442  python demo4.py resources/models/Gauri.pmdl 
+  443  cd /home/pi/snowboy/examples/Python3/
+  444  idle snowboydecoder_arecord.py 
+  445  sudo idle snowboydecoder_arecord.py 
+  446  ls -lrt
+  447  cd /home/pi/DeepLearning/SpeechRecognizer/
+  448  sudo idle
+  449  cd /home/pi/DeepLearning/SpeechRecognizer/
+  450  cd ..
+  451  play hello_world.wav
+  452  play hello_world.mp3
+  453  rec somthing.wav
+  454  arecord -D "plughw:1,0" -q -f cd -t wav -d 5
+  455  arecord -l
+  456  export AUDIODEV=hw:1,0
+  457  play hello_world.mp3
+  458  play hello_world.wav
+  459  rec somthing.wav
+  460  play somthing.wav 
+  461  rec somthing.wav
+  462  play somthing.wav 
+  463  exit
+  464  source /home/pi/.profile 
+  465  workon dl
+  466  cd /home/pi/DeepLearning/SpeechRecognizer/
+  467  python demo4.py resources/models/Gauri.pmdl 
+  468  source /home/pi/.profile 
+  469  workon dl
+  470  cd /home/pi/DeepLearning/SpeechRecognizer/
+  471  python watsontts.py 
+  472  sudo pip install pyttsx
+  473  python demo4.py resources/models/Gauri.pmdl 
+  474  sudo pip install pyttsx
+  475  pip install pyttsx
+  476  python demo4.py resources/models/Gauri.pmdl 
+  477  pip install engine
+  478  pip install tts-watson
+  479  python demo4.py resources/models/Gauri.pmdl 
+  480  pip install Engine
+  481  pip install pyttsx3
+  482  python demo4.py resources/models/Gauri.pmdl 
+  483  source /home/pi/.profile 
+  484  workon dl
+  485  cd /home/pi/DeepLearning/SpeechRecognizer/
+  486  python demo4.py resources/models/Gauri.pmdl 
+  487  cd ..
+  488  python main.py 
+  489  sudo modprobe bcm2835-v4l2
+  490  python main.py 
+  491  source /home/pi/.profile 
+  492  cd /home/pi/DeepLearning/SpeechRecognizer/
+  493  cd ..
+  494  workon dl
+  495  python main.py 
+  496  source /home/pi/.profile 
+  497  workon dl
+  498  cd /home/pi/DeepLearning/SpeechRecognizer/
+  499  python demo4.py resources/models/Gauri.pmdl 
+  500  cd ..
+  501  python main.py 
+  502  source /home/pi/.profile 
+  503  workon dl
+  504  python demo4.py resources/models/Gauri.pmdl 
+  505  cd /home/pi/DeepLearning/SpeechRecognizer/
+  506  cd ..
+  507  python main.py 
+  508  source /home/pi/.profile 
+  509  workon dl
+  510  python main.py 
+  511  cd /home/pi/DeepLearning
+  512  python main.py 
+  513  ps -fu
+  514  source /home/pi/.profile 
+  515  workon dl
+  516  cd /home/pi/DeepLearning/SpeechRecognizer/
+  517  python demo4.py resources/models/Gauri.pmdl 
+  518  source /home/pi/.profile 
+  519  workon dl
+  520  python demo4.py resources/models/Gauri.pmdl 
+  521  cd /home/pi/DeepLearning/SpeechRecognizer/
+  522  python demo4.py resources/models/Gauri.pmdl 
+  523  cd ..
+  524  python main.py 
+  525  source /home/pi/.profile 
+  526  cd /home/pi/DeepLearning/SpeechRecognizer/
+  527  cd ..
+  528  workon dl
+  529  python main.py
+  530  sudo vi ~/.asoundrc
+  531  cd SpeechRecognizer/
+  532  python demo4.py resources/models/Gauri.pmdl 
+  533  sudo vi ~/.asoundrc
+  534  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  535  sudo vi ~/.asoundrc
+  536  sudo raspi-config
+  537  sudo vi ~/.asoundrc
+  538  sudo raspi-config
+  539  sudo vi ~/.asoundrc
+  540  sudo cp  ~/.asoundrcSound ~/.asoundrc
+  541  sudo vi ~/.asoundrc
+  542  sudo raspi-config
+  543  sudo vi ~/.asoundrc
+  544  sudo cp  ~/.asoundrcASR ~/.asoundrc
+  545  sudo idle ~/.asoundrc
+  546  sudo cp ~/.asoundrc ~/.asoundrcASR 
+  547  sudo idle ~/.asoundrc
+  548  cd DeepLearning/SpeechRecognizer/
+  549  idle watsontts.py 
+  550  idle snowboydecoder_arecord.py 
+  551  ps -fu
+  552  cd /home/pi/.virtualenvs/dl/lib/python3.5/site-packages/
+  553  ls -lrt
+  554  sudo cp /home/pi/DeepLearning/SpeechRecognizer/snowboydecoder_arecord.py .
+  555  sudo cp /home/pi/DeepLearning/SpeechRecognizer/snowboydetect.py .
+  556  sudo cp /home/pi/DeepLearning/SpeechRecognizer/_snowboydetect.so .
+  557  sudo cp /home/pi/DeepLearning/SpeechRecognizer/resources/ .
+  558  sudo cp -R /home/pi/DeepLearning/SpeechRecognizer/resources/ .
+  559  source /home/pi/.profile 
+  560  workon dl
+  561  cd /home/pi/DeepLearning/SpeechRecognizer/
+  562  python demo4.py resources/models/Gauri.pmdl 
+  563  sudo apt-get install libespeak
+  564  sudo apt-get install espeak
+  565  cd /home/pi/DeepLearning/SpeechRecognizer/
+  566  cd ..
+  567  sudo idle main.py 
+  568  source /home/pi/.profile 
+  569  workon dl
+  570  python -m SimpleHTTPServer 6379
+  571  pip install SimpleHTTPServer
+  572  pip install simplehttpserver
+  573  python -m http.server 6379
+  574  python -m http.server 8080
+  575  python -m https.server 8080
+  576  python -m http.server 8080
+  577  source /home/pi/.profile 
+  578  workon dl
+  579  cd /home/pi/DeepLearning/SpeechRecognizer/
+  580  python speechRecognition.py 
+  581  python
+  582  python speechRecognition.py 
+  583  clear
+  584  pip install rasa_nlu
+  585  git clone https://github.com/RasaHQ/rasa_nlu.git
+  586  cd rasa_nlu
+  587  pip install -r requirements.txt
+  588  pip install -e .
+  589  pip install -r alt_requirements/requirements_full.txt
+  590  sudo vi alt_requirements/requirements_tensorflow_sklearn.txt 
+  591  pip install -r alt_requirements/requirements_full.txt
+  592  source /home/pi/.profile 
+  593  workon dl
+  594  cd /home/pi/DeepLearning/SpeechRecognizer/
+  595  python demo4.py resources/models/Gauri.pmdl 
+  596  pip install redis
+  597  cd /home/pi/DeepLearning/SpeechRecognizer/
+  598  cd ..
+  599  cd Identification/
+  600  idle faceRecognition.py 
+  601  pip3.5 install redis
+  602  pip3 install redis
+  603  source /home/pi/.profile 
+  604  cd /home/pi/DeepLearning/SpeechRecognizer/
+  605  workon dl
+  606  python
+  607  python desp  resources/models/Gauri.pmdl 
+  608  ls -lrt
+  609  python speechRecognition.py 
+  610  source /home/pi/.profile 
+  611  workon dl
+  612  cd /home/pi/DeepLearning/Identification/
+  613  ls -lrt
+  614  python faceRecognition.py 
+  615  sudo modprobe bcm2835-v4l2
+  616  python faceRecognition.py 
+  617  cd ..
+  618  cd SpeechRecognizer/
+  619  python speechRecognition.py 
+  620  cd /home/pi/DeepLearning/SpeechRecognizer/
+  621  idle speechRecognition.py 
+  622  workon dl
+  623  source /home/pi/.profile 
+  624  workon dl
+  625  python speechRecognition.py 
+  626  python demo4.py resources/models/Gauri.pmdl 
+  627  python -m http.server 8080
+  628  source /home/pi/.profile 
+  629  python -m http.server 8080
+  630  sudo apt-get install redis-server
+  631  redis-cli
+  632  source /home/pi/.profile 
+  633  redis-cli
+  634  source /home/pi/.profile 
+  635  workon dl
+  636  cd /home/pi/DeepLearning/SpeechRecognizer/
+  637  cd ..
+  638  cd Identification/
+  639  python faceRecognition.py 
+  640  cd /home/pi/DeepLearning/Identification/
+  641  cd ..
+  642  cd SpeechRecognizer/
+  643  sudo idle demo4.py 
+  644  source /home/pi/.profile 
+  645  workon dl
+  646  cd /home/pi/DeepLearning/SpeechRecognizer
+  647  python watsontts.py 
+  648  curl -X POST -u "apikey:ksdf8WijvLfzX1__28bFnyeXejDmyynOP0LPAzUj9Ehh" --header "Content-Type: application/json" --header "Accept: audio/mp3" --data '{"text": "hello world this is ibm watson text to speech service test, also contains many more features"}' --output hello_world.mp3 "https://stream-fra.watsonplatform.net/text-to-speech/api/v1/synthesize"
+  649  python watsontts.py 
+  650  pip install pygame
+  651  python watsontts.py 
+  652  python speechRecognition.py resources/models/Gauri.pmdl 
+  653  source /home/pi/.profile 
+  654  workon dl
+  655  cd DeepLearning/SpeechRecognizer/
+  656  python speechRecognition.py resources/models/Gauri.pmdl 
+  657  python sttTest.py 
+  658  python speechRecognition.py resources/models/Gauri.pmdl 
+  659  cd /home/pi/DeepLearning/SpeechRecognizer
+  660  idle watsontts.py 
+  661  sudo idle watsontts.py 
+  662  source /home/pi/.profile 
+  663  workon dl
+  664  cd /home/pi/DeepLearning/SpeechRecognizer
+  665  cd rasa_nlu/
+  666  python -m rasa_core.train -d ../resources/domain.yml -s ../resources/stories.md -o models/dialogue
+  667  pip install rasa_core
+  668  cd ..
+  669  git clone https://github.com/RasaHQ/rasa_core.git
+  670  pip install -r requirements.txt
+  671  cd rasa_core/
+  672  pip install -r requirements.txt
+  673  pip install -e .
+  674  python -m rasa_core.train -d ../resources/domain.yml -s ../resources/stories.md -o models/dialogue
+  675  python -m rasa_core.train -d ../resources/models/domain.yml -s ../resources/models/stories.md -o models/dialogue
+  676  python -m rasa_core.train -d ../resources/models/domain.yml -s ../resources/models/stories.md -o resources/models/dialogue
+  677  python -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose
+  678  python -m rasa_nlu.train -c resources/model/nlu_config.yml --data resources/model/nlu.md -o resources/models --fixed_model_name nlu --project current --verbose
+  679  python -m rasa_nlu.train -c resources/models/nlu_config.yml --data resources/models/nlu.md -o resources/models --fixed_model_name nlu --project current --verbose
+  680  cd ..
+  681  cd SpeechRecognizer/
+  682  python -m rasa_nlu.train -c resources/models/nlu_config.yml --data resources/models/nlu.md -o resources/models --fixed_model_name nlu --project current --verbose
+  683  python -m rasa_core.train -d ../resources/models/domain.yml -s ../resources/models/stories.md -o resources/models/dialogue
+  684  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  685  cd rasa_core/
+  686  python -m rasa_core.train -d ../resources/models/domain.yml -s ../resources/models/stories.md -o ../resources/models/dialogue
+  687  cd ..
+  688  cd SpeechRecognizer/
+  689  cd rasa_core
+  690  pip install -e .
+  691  grep -rnw / -e'tensorflow==1.12.0'
+  692  sudo grep -rnw / -e'tensorflow==1.12.0'
+  693  sudo grep -rnw / -e'tensorflow=='
+  694  ack
+  695  sudo install ack
+  696  sudoapt-get  install ack
+  697  sudo apt-get  install ack
+  698  ack
+  699  ack 'tensorflow==1.12.0'
+  700  ack 'tensorflow=='
+  701  pip install -e .
+  702  cd /home/pi/DeepLearning/SpeechRecognizer/rasa_core/examples/restaurantbot
+  703  python bot.py
+  704  cd ..
+  705  ack 'tensorflow'
+  706  pip install -e .
+  707  cd /home/pi/DeepLearning/SpeechRecognizer/rasa_core/examples/restaurantbot
+  708  python bot.py 
+  709  cd -
+  710  cd ..
+  711  pip instal IPython
+  712  pip install IPython
+  713  python testRasa.py 
+  714  python speechRecognition.py resources/models/Gauri.pmdl 
+  715  df -h
+  716  cd /home/pi/DeepLearning/SpeechRecognizer
+  717  source /home/pi/.profile 
+  718  workon dl
+  719  python speechRecognition.py resources/models/Gauri.pmdl 
+  720  source /home/pi/.profile 
+  721  workon dl
+  722  cd /home/pi/DeepLearning/SpeechRecognizer
+  723  python speechRecognition.py resources/models/Gauri.pmdl 
+  724  cd /home/pi/DeepLearning/SpeechRecognizer
+  725  source /home/pi/.profile 
+  726  workon dl
+  727  python speechRecognition.py resources/models/Gauri.pmdl 
+  728  source /home/pi/.profile 
+  729  cd /home/pi/DeepLearning/SpeechRecognizer
+  730  workon dl
+  731  python speechRecognition.py resources/models/Gauri.pmdl 
+  732  cd /home/pi/DeepLearning/SpeechRecognizer
+  733  source /home/pi/.profile 
+  734  workon dl
+  735  python speechRecognition.py resources/models/Gauri.pmdl 
+  736  cd /home/pi/DeepLearning/SpeechRecognizer
+  737  source /home/pi/.profile 
+  738  workon dl
+  739  python speechRecognition.py resources/models/Gauri.pmdl 
+  740  cd /home/pi/DeepLearning/SpeechRecognizer
+  741  source /home/pi/.profile 
+  742  workon dl
+  743  python speechRecognition.py resources/models/Gauri.pmdl 
+  744  source /home/pi/.profile 
+  745  cd /home/pi/DeepLearning/SpeechRecognizer
+  746  workon dl
+  747  python speechRecognition.py resources/models/Gauri.pmdl 
+  748  cd /home/pi/DeepLearning/SpeechRecognizer
+  749  source /home/pi/.profile 
+  750  workon dl
+  751  python speechRecognition.py resources/models/Gauri.pmdl 
+  752  source /home/pi/.profile 
+  753  cd /home/pi/DeepLearning/SpeechRecognizer
+  754  workon dl
+  755  cd /home/pi/DeepLearning/SpeechRecognizer
+  756  python speechRecognition.py resources/models/Gauri.pmdl 
+  757  cd /home/pi/DeepLearning/SpeechRecognizer
+  758  workon dl
+  759  source /home/pi/.profile 
+  760  workon dl
+  761  python speechRecognition.py resources/models/Gauri.pmdl 
+  762  source /home/pi/.profile 
+  763  workon dl
+  764  cd /home/pi/DeepLearning/SpeechRecognizer
+  765  python speechRecognition.py resources/models/Gauri.pmdl 
+  766  cd /home/pi/DeepLearning/SpeechRecognizer
+  767  source /home/pi/.profile 
+  768  workon dl
+  769  python speechRecognition.py resources/models/Gauri.pmdl 
+  770  exit
+  771  cd DeepLearning/SpeechRecognizer/
+  772  idle testRasa.py 
+  773  source /home/pi/.profile 
+  774  workon dl
+  775  cd /home/pi/DeepLearning/SpeechRecognizer
+  776  python speechRecognition.py resources/models/Gauri.pmdl 
+  777  source /home/pi/.profile 
+  778  workon dl
+  779  cd /home/pi/DeepLearning/SpeechRecognizer
+  780  python -m rasa_nlu.train -c resources/models/nlu_config.yml --data resources/models/nlu.md -o resources/models --fixed_model_name nlu --project current --verbose
+  781  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  782  python speechRecognition.py resources/models/Gauri.pmdl 
+  783  source /home/pi/.profile 
+  784  workon dl
+  785  cd /home/pi/DeepLearning/SpeechRecognizer
+  786  python speechRecognition.py resources/models/Gauri.pmdl 
+  787  source /home/pi/.profile 
+  788  workon dl
+  789  cd /home/pi/DeepLearning/SpeechRecognizer
+  790  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer db3d0b24-4153-42cb-8e18-2aa551368a3e"
+  791  python speechRecognition.py resources/models/Gauri.pmdl 
+  792  pip install IPython
+  793  python rasaTest.py 
+  794  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  795  python speechRecognition.py resources/models/Gauri.pmdl 
+  796  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  797  python speechRecognition.py resources/models/Gauri.pmdl 
+  798  source /home/pi/.profile 
+  799  workon dl
+  800  cd /home/pi/DeepLearning/SpeechRecognizer
+  801  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  802  python speechRecognition.py resources/models/Gauri.pmdl 
+  803  cd /home/pi/DeepLearning/SpeechRecognizer
+  804  source /home/pi/.profile 
+  805  workon dl
+  806  python -m rasa_core.train -d resources/models/domain.yml -s resources/models/stories.md -o resources/models/dialogue
+  807  python speechRecognition.py resources/models/Gauri.pmdl 
+  808  source /home/pi/.profile 
+  809  workon dl
+  810  pip install httplib
+  811  pip install http.client
+  812  pip install json
+  813  pip install simplejson
+  814  cd /home/pi/DeepLearning/SpeechRecognizer
+  815  python speechRecognition.py resources/models/Gauri.pmdl 
+  816  source /home/pi/.profile 
+  817  workon dl
+  818  pip install request
+  819  pip install requests
+  820  cd /home/pi/DeepLearning/SpeechRecognizer
+  821  python speechRecognition.py resources/models/Gauri.pmdl 
+  822  cd /home/pi/DeepLearning/SpeechRecognizer
+  823  source /home/pi/.profile 
+  824  workon dl
+  825  python speechRecognition.py resources/models/Gauri.pmdl 
+  826  source /home/pi/.profile 
+  827  workon dl
+  828  cd /home/pi/DeepLearning/SpeechRecognizer
+  829  python speechRecognition.py resources/models/Gauri.pmdl 
+  830  cd /home/pi/DeepLearning/SpeechRecognizer
+  831  source /home/pi/.profile 
+  832  workon dl
+  833  python speechRecognition.py resources/models/Gauri.pmdl 
+  834  source /home/pi/.profile 
+  835  workon dl
+  836  cd /home/pi/DeepLearning/SpeechRecognizer
+  837  python speechRecognition.py resources/models/Gauri.pmdl 
+  838  cd /home/pi/DeepLearning/SpeechRecognizer
+  839  source /home/pi/.profile 
+  840  workon dl
+  841  python speechRecognition.py resources/models/Gauri.pmdl 
+  842  source /home/pi/.profile 
+  843  workon dl
+  844  cd /home/pi/DeepLearning/SpeechRecognizer
+  845  python speechRecognition.py resources/models/Gauri.pmdl 
+  846  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic 099005f9-6f52-4da9-ac7c-0f4d31ac78803d5d4cb1-3b7f-44e0-949b-d0f42d225281"   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=d1221ae0-706e-48f4-a7ad-010cb671d003&redirect_uri=http://localhost:8080/"
+  847  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic 099005f9-6f52-4da9-ac7c-0f4d31ac7880"   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=d1221ae0-706e-48f4-a7ad-010cb671d003&redirect_uri=http://localhost:8080/"
+  848  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic 099005f9-6f52-4da9-ac7c-0f4d31ac7880:3d5d4cb1-3b7f-44e0-949b-d0f42d225281"   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=d1221ae0-706e-48f4-a7ad-010cb671d003&redirect_uri=http://localhost:8080/"
+  849  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=d1221ae0-706e-48f4-a7ad-010cb671d003&redirect_uri=http://localhost:8080/"
+  850  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=3b32ab03-28d3-4759-a8c5-7be10abbbe26&redirect_uri=http://localhost:8080/"
+  851  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=3b32ab03-28d3-4759-a8c5-7be10abbbe26&redirect_uri=http://localhost"
+  852  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=5858c9e4-775f-4371-a078-f3efb80a5684&redirect_uri=http://localhost:8080/"
+  853  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=5858c9e4-775f-4371-a078-f3efb80a5684&redirect_uri=http://localhost"
+  854  POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=36990fb5-03ff-4525-bd87-ab3186b082e2&redirect_uri=http://localhost"
+  855  POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=36990fb5-03ff-4525-bd87-ab3186b082e2&redirect_uri=http://localhost:8080"
+  856  clear
+  857  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=68375c34-ea5e-471f-abcf-767f91c04c17&redirect_uri=http://localhost:8080"
+  858  curl curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer 9bf079a1-fda7-49fc-b13f-2ec2f550a77f"
+  859  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer 9bf079a1-fda7-49fc-b13f-2ec2f550a77f"
+  860  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1"   -H "accept: application/json"   -H "authorization: Bearer 9bf079a1-fda7-49fc-b13f-2ec2f550a77f"
+  861  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles" -H "accept: application/json" -H "authorization: Bearer a1b2c3d4-a1b2-a1b2-a1b2-a1b2c3d4e5f6"
+  862  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer 9bf079a1-fda7-49fc-b13f-2ec2f550a77f"
+  863  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles"  -H "accept: application/json"   -H "authorization: Bearer 9bf079a1-fda7-49fc-b13f-2ec2f550a77f"
+  864  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=1b04e6d5-e0de-4cc8-bd96-3fbf8c629e0d&redirect_uri=http://localhost:8080"
+  865  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer db3d0b24-4153-42cb-8e18-2aa551368a3e"
+  866  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles" -H "accept: application/json" -H "authorization: Bearer a1b2c3d4-a1b2-a1b2-a1b2-a1b2c3d4e5f6"
+  867  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=1b04e6d5-e0de-4cc8-bd96-3fbf8c629e0d&redirect_uri=http://localhost:8080"
+  868  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer db3d0b24-4153-42cb-8e18-2aa551368a3e"
+  869  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=b308bf8b-51da-4493-904a-ee0761d58ea5&redirect_uri=http://localhost:8080"
+  870  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer 52fe9eeb-7804-4a81-aab9-73ffca967489"
+  871  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=54557abc-ef09-44fd-b6d8-4db48ca5e0d7&redirect_uri=http://localhost:8080"
+  872  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles"   -H "accept: application/json"   -H "authorization: Bearer f4a7a736-306c-4891-80bc-3986c5a95d8b"
+  873  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/fuel"   -H "accept: application/json"   -H "authorization: Bearer f4a7a736-306c-4891-80bc-3986c5a95d8b"
+  874  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=be82b417-bcf5-4437-b1e1-aa70f1c48701&redirect_uri=http://localhost:8080"
+  875  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/fuel"   -H "accept: application/json"   -H "authorization: Bearer 1fa291ed-ef18-43f8-b55c-ee6baeb58dc3"
+  876  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=62b9ea6c-93da-41dd-a01d-35524eb29790&redirect_uri=http://localhost:8080"
+  877  curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/fuel"   -H "accept: application/json"   -H "authorization: Bearer 143cbd33-2f74-4f48-8701-c107282184df"
+  878  source /home/pi/.profile 
+  879  workon dl
+  880  cd /home/pi/DeepLearning/SpeechRecognizer
+  881  idle speechRecognition.py 
+  882  python -m http.server 8080
+  883  source /home/pi/.profile 
+  884  workon dl
+  885  python -m http.server 8080
+  886  source /home/pi/.profile 
+  887  workon dl
+  888  cd /home/pi/DeepLearning/SpeechRecognizer
+  889  python speechRecognition.py resources/models/Gauri.pmdl 
+  890  cd /home/pi/DeepLearning/SpeechRecognizer
+  891  source /home/pi/.profile 
+  892  workon dl
+  893  python speechRecognition.py resources/models/Gauri.pmdl 
+  894  source /home/pi/.profile 
+  895  workon dl
+  896  python speechRecognition.py resources/models/Gauri.pmdl 
+  897  cd /home/pi/DeepLearning/SpeechRecognizer
+  898  python speechRecognition.py resources/models/Gauri.pmdl 
+  899  cd /home/pi/DeepLearning/SpeechRecognizer
+  900  source /home/pi/.profile 
+  901  workon dl
+  902  python speechRecognition.py resources/models/Gauri.pmdl 
+  903  source /home/pi/.profile 
+  904  workon dl
+  905  cd /home/pi/DeepLearning/SpeechRecognizer
+  906  idle speechRecognition.py 
+  907  source /home/pi/.profile 
+  908  workon dl
+  909  idle
+  910  python
+  911  curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token"   -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ=="   -H "content-type: application/x-www-form-urlencoded"   -d "grant_type=authorization_code&code=71df76f1-9844-47db-9482-ecad853ba513&redirect_uri=http://localhost:8080"
+  912  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"UNLOCK\"}"
+  913  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"LOCK\"}"
+  914  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"UNLOCK\"}"
+  915  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"LOCK\"}"
+  916  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"UNLOCK\"}"
+  917  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"LOCK\"}"
+  918  curl -X POST "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/doors"   -H "Content-Type: application/json"   -H "authorization: Bearer 5f12a859-a500-46a1-bdd2-2ddb822c6799"   -d "{ \"command\": \"UNLOCK\"}"
+  919  cd /home/pi/DeepLearning/SpeechRecognizer
+  920  source /home/pi/.profile 
+  921  workon dl
+  922  source /home/pi/.profile 
+  923  workon dl
+  924  cd /home/pi/DeepLearning/EmotionDetection/
+  925  python build_data_set.py 
+  926  sudo modprobe bcm2835-v4l2
+  927  python build_data_set.py 
+  928  idle /home/pi/DeepLearning/EmotionDetection/build_data_set.py 
+  929  source /home/pi/.profile 
+  930  workon dl
+  931  sudo modprobe bcm2835-v4l2
+  932  cd /home/pi/DeepLearning/EmotionDetection/
+  933  python build_data_set.py 
+  934  pip install glob
+  935  python build_data_set.py 
+  936  history
+  937  history > commands.txt
+  938  cat commands.txt
+  939  history
+  940  history > commands.txt
