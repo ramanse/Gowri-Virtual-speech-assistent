@@ -1,19 +1,1 @@
-https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/authorize?response_type=code&client_id=099005f9-6f52-4da9-ac7c-0f4d31ac7880&redirect_uri=http://localhost:8080&scope=mb:vehicle:status:general mb:user:pool:reader
-d1221ae0-706e-48f4-a7ad-010cb671d003
-curl -X POST "https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/token" \
-  -H "authorization: Basic MDk5MDA1ZjktNmY1Mi00ZGE5LWFjN2MtMGY0ZDMxYWM3ODgwOjNkNWQ0Y2IxLTNiN2YtNDRlMC05NDliLWQwZjQyZDIyNTI4MQ==" \
-  -H "content-type: application/x-www-form-urlencoded" \
-  -d "grant_type=authorization_code&code=54557abc-ef09-44fd-b6d8-4db48ca5e0d7&redirect_uri=http://localhost:8080"
 
-
-curl -X GET "https://api.mercedes-benz.com/vehicledata_tryout/v1" \
- -H "authorization: Bearer 1a0e0328-5f37-4678-a425-95b8bf083de6"
-
-curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles" \
-  -H "accept: application/json" \
-  -H "authorization: Bearer f4a7a736-306c-4891-80bc-3986c5a95d8b"
-
-
-curl -X GET "https://api.mercedes-benz.com/experimental/connectedvehicle/v1/vehicles/08748497FBE9AAADE2/fuel" \
-  -H "accept: application/json" \
-  -H "authorization: Bearer f4a7a736-306c-4891-80bc-3986c5a95d8b"
